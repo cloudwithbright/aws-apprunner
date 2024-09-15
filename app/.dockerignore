@@ -33,3 +33,6 @@ app/src/*/__pycache__
 init.sql
 .pytest_cache
 __pycache__
+test_*
+setup.sh
+destroy.sh
