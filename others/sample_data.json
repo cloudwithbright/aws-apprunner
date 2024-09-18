@@ -16,17 +16,5 @@
         "description": "Fat pig",
         "price": 300,
         "in_stock": true
-    },
-    {
-        "name": "Elephant",
-        "description": "Blue elephant",
-        "price": 400,
-        "in_stock": false
-    },
-    {
-        "name": "Tiger",
-        "description": "America tiger",
-        "price": 700,
-        "in_stock": true
     }
 ]

@@ -6,8 +6,8 @@ import os
 #Get Environment Variables
 DB_URL=os.getenv("DB_URL")
 DATABASE=os.getenv("DATABASE")
-DATABASE_PWD=os.getenv("DATABASE_PWD")
 DATABASE_USR=os.getenv("DATABASE_USR")
+DATABASE_PWD=os.getenv("DATABASE_PWD")
 
 # Setup Database Credentials
 DATABASE_URL=f"postgresql://{DATABASE_USR}:{DATABASE_PWD}@{DB_URL}/{DATABASE}"

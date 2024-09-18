@@ -1,0 +1,14 @@
+{
+  "Statement": [
+    {
+      "Action": [
+        "secretsmanager:GetSecretValue"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:secretsmanager:us-east-2:031767307411:secret:items-rds-v2-qKyADf"
+      ]
+    }
+  ],
+  "Version": "2012-10-17"
+}
