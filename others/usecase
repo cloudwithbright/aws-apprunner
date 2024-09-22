@@ -1,0 +1,15 @@
+Introduction
+---
+
+**[ABC]** is a startup e-commerce platform that wants to run its applications on AWS. The application is based on microservices, with the backend separated from the frontend.
+
+---
+### Requirements:
+
+1. We lack sufficient cloud expertise.
+2. We want to deploy our POC as quickly as possible.
+3. We want to set request limits to our endpoints.
+4. We need a good secure environment because we build and manage our own payment systems.
+5. We want to restrict users in Ghana from deleting items.
+6. We want to prevent Cross-Site Scripting (XSS).
+8. We want to secure all backend services with API keys.

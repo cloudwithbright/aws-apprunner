@@ -27,3 +27,9 @@ chmod +x destroy.sh
 # Destroy the application (both database and webapp)
 ./destroy.sh
 ```
+
+## AppRunner useful Docs
+
+* Documentation: https://docs.aws.amazon.com/apprunner/
+
+* Pricing: https://aws.amazon.com/apprunner/pricing/

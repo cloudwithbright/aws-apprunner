@@ -1,6 +1,11 @@
+### Check if endpoint is working
+GET {{Hostname}} HTTP/1.1
+x-api-key: {{API_KEY}}
+
 ### Add Item (1)
 POST {{Hostname}}/items HTTP/1.1
 Content-type: application/json; charset=utf8
+x-api-key: {{API_KEY}}
 X-User: 1
 
 {
@@ -13,6 +18,7 @@ X-User: 1
 ### Add Item (2)
 POST {{Hostname}}/items HTTP/1.1
 Content-type: application/json; charset=utf8
+x-api-key: {{API_KEY}}
 X-User: 1
 
 {
@@ -25,6 +31,7 @@ X-User: 1
 ### Add Item (3)
 POST {{Hostname}}/items HTTP/1.1
 Content-type: application/json; charset=utf8
+x-api-key: {{API_KEY}}
 X-User: 1
 
 {
@@ -37,6 +44,7 @@ X-User: 1
 ### Add Item (4)
 POST {{Hostname}}/items HTTP/1.1
 Content-type: application/json; charset=utf8
+x-api-key: {{API_KEY}}
 X-User: 1
 
 {
@@ -49,6 +57,7 @@ X-User: 1
 ### Add Item (5)
 POST {{Hostname}}/items HTTP/1.1
 Content-type: application/json; charset=utf8
+x-api-key: {{API_KEY}}
 X-User: 1
 
 {
@@ -61,6 +70,7 @@ X-User: 1
 ### Add Item (6)
 POST {{Hostname}}/items HTTP/1.1
 Content-type: application/json; charset=utf8
+x-api-key: {{API_KEY}}
 X-User: 1
 
 {
@@ -72,20 +82,26 @@ X-User: 1
 
 ### Get all items
 GET {{Hostname}}/items HTTP/1.1
+x-api-key: {{API_KEY}}
 
 ### Get item by id
 # @prompt Id
-GET {{Hostname}}/items/{{Id}} HTTP/1.1
+GET {{Hostname}}/items/?itemid={{Id}} HTTP/1.1
+x-api-key: {{API_KEY}}
 
 ### DELETE item by id
 # @prompt Id
-DELETE {{Hostname}}/items/{{Id}} HTTP/1.1
+DELETE {{Hostname}}/items HTTP/1.1
+itemid: {{Id}}
+x-api-key: {{API_KEY}}
 
 ### Update an item
 # @prompt Id
-PUT {{Hostname}}/items/{{Id}} HTTP/1.1
+PUT {{Hostname}}/items HTTP/1.1
 Content-type: application/json; charset=utf8
+x-api-key: {{API_KEY}}
 X-User: 1
+itemid: {{Id}}
 
 {
   "name": "Rat",

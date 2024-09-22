@@ -1,5 +1,5 @@
 ## Import Libries
-from fastapi import APIRouter, File, UploadFile
+from fastapi import APIRouter, File, UploadFile, Header, Query
 from src.models.Items import ItemBase
 from src.service.service import (
     create_item_svc,
@@ -8,6 +8,7 @@ from src.service.service import (
     read_items_svc,
     update_item_svc,
 )
+from typing import Annotated
 import shutil
 import os
 
@@ -25,34 +26,34 @@ async def Welcome():
 async def create_item_cont(item: ItemBase):
     return create_item_svc(item)
 
-
-# Read operation
+# Endpoint to Return Single and Multiple Data
 @router.get("/items")
-async def read_items_cont():
+async def read_item_cont(itemid: int = Query(default=None)):
+
+    if itemid:
+        return read_item_svc(itemid)
     return read_items_svc()
 
-
-@router.get("/items/{item_id}")
-async def read_item_cont(item_id: int):
-    return read_item_svc(item_id)
-
+# # Read all Items
+# @router.get("/items")
+# async def read_items_cont():
 
 # Update operation
-@router.put("/items/{item_id}")
-async def update_item_cont(item_id: int, item: ItemBase):
-    return update_item_svc(item_id, item)
+@router.put("/items")
+async def update_item_cont(item: ItemBase, itemid: int = Header(...)):
+    return update_item_svc(itemid, item)
 
 
 # Delete operation
-@router.delete("/items/{item_id}")
-async def delete_item_cont(item_id: int):
-    return delete_item_svc(item_id)
+@router.delete("/items")
+async def delete_item_cont(itemid: int = Header(...)):
+    return delete_item_svc(itemid)
 
 # Define the upload directory
 UPLOAD_DIR = "/tmp"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
-@router.post("/uploadfile/")
+@router.post("/uploadfile")
 async def create_upload_file(file: UploadFile = File(...)):
     
     # Create the file path

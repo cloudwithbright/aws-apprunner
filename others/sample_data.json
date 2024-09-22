@@ -10,11 +10,5 @@
         "description": "Black dog",
         "price": 200,
         "in_stock": false
-    },
-    {
-        "name": "Pig",
-        "description": "Fat pig",
-        "price": 300,
-        "in_stock": true
     }
 ]
